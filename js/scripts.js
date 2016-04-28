@@ -51,7 +51,7 @@ $('document').ready(function(){
         
         $("#main").fadeIn(1000);
         mainLoaded();
-            
+             
         
         
     }
@@ -76,6 +76,59 @@ $('document').ready(function(){
         $("#cloud4").delay(500).animate({marginTop : "16%"},{duration : 2000,easing: "swing"});
         $("#cloud5").delay(500).animate({marginTop : "15%"},{duration : 2000,easing: "swing"});
         
+        
+
+        
+        $("#fence_with_bird").mouseenter(function() {
+        
+            $("#bird").animate({transform: "rotate(-50deg)"},100,function(){
+                $(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
+                    $(this).delay(200).animate({transform: "rotate(-50deg)"},100,function(){
+                        $(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
+                
+                        });
+                    });
+                });
+            });
+        });
+       
+        
+        $("#fence").mouseenter(function() {
+            $(this).effect( "shake", 600 );
+        });
+        
+
+
+         $("#fence2").on("click",function(){
+        // $("#fence2").ready(function(){
+            $('#main').animate(
+                {
+                    width:'toggle'
+                },0,function(){
+                    $('#main').hide();    
+                }
+            );
+            $('#menu').show().animate(
+                {
+                    
+                },400,function(){    
+                }
+            );
+            // $('#home').show().animate(
+            //     {width:'23.3333%'
+            //     },400,function(){  
+            //     }
+            // );
+        });
+        //  var color;
+
+        // $('.circle').mouseenter(function() {
+        //     color = $(this).css("background");
+        //     $(this).animate({backgroundColor: "#FFF"}, 0, function(){});
+        // });
+        // $('.circle').mouseout(function() {
+        //     $(this).animate({backgroundColor: color}, 0, function(){});
+        // });
         $(function() {
             var str= "Bhaskar Goyal";
             $('#name-text').css({dispaly: "block"});
@@ -111,49 +164,6 @@ $('document').ready(function(){
             }, 1000);
         });
         
-
-        
-        $("#fence_with_bird").mouseenter(function() {
-        
-            $("#bird").animate({transform: "rotate(-50deg)"},100,function(){
-                $(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
-                    $(this).delay(200).animate({transform: "rotate(-50deg)"},100,function(){
-                        $(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
-                
-                        });
-                    });
-                });
-            });
-        });
-       
-        
-        $("#fence").mouseenter(function() {
-            $(this).effect( "shake", 600 );
-        });
-        // $("#fence2").mouseenter(function() {
-        //     $(this).effect( "highlight", 1000 );
-        // });
-
-
-        $("#fence2").on("click",function(){
-            $('#main').animate(
-                {
-                    width:'toggle'
-                },400,function(){
-                    $('#main').hide();    
-                }
-            );
-            $('#menu').show().animate(
-                {width:'10%'
-                },400,function(){    
-                }
-            );
-            $('#home').show().animate(
-                {width:'23.3333%'
-                },400,function(){  
-                }
-            );
-        });
     }
     
     
@@ -233,10 +243,25 @@ $('document').ready(function(){
    
     
     
-
+    $(function() {
+        $('#menu').on("click", function() {
+            $('#menu').animate(
+                {
+                    width: '0px'    
+                }, 0, function() {
+                    $(this).hide();
+                }
+            );
+            $('#home').show().animate(
+                {
+                    width: '33.333%'
+                }, 400, function(){}
+            );
+        });
+    });
     
     $('#home').on("click",function(){
-        $(this).animate(
+        $('#home').animate(
             {width:'toggle'
             },200,function(){
                 $(this).hide();
@@ -248,7 +273,7 @@ $('document').ready(function(){
             },400,function(){
                 $('#menu').animate(
                     {width:'0'
-                    },400
+                    },200
                 );
                 
             }
