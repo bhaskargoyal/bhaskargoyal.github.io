@@ -168,16 +168,15 @@ $('document').ready(function(){
     
     
     
-    $("#door_aside_wrap").click(function() {
-        $( "#door_aside_wrap" ).accordion({
+    // $("#door_aside_wrap").click(function() {
+    //     $( "#door_aside_wrap" ).accordion({
                 
-            }
-        );
-    });
+    //     });
+    // });
     $( "#door_aside_wrap" ).accordion({
-             active: 2
-            }
-    );
+        heightStyle: "content" ,
+        active: 2
+    });
    
     
     
