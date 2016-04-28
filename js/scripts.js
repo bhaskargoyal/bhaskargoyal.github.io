@@ -260,6 +260,20 @@ $('document').ready(function(){
         });
     });
     
+    $('#menu-button').on('click', function() {
+        $('#home,.aside,#door,#door_aside_wrap').animate(
+            {width:'0'
+            },200,function(){
+                $("#home,.aside,#door,#door_aside_wrap").hide();
+                
+            }
+        );
+        $('#menu').show().animate(
+            {},200,function(){
+                                
+            }
+        );
+    });
     $('#home').on("click",function(){
         $('#home').animate(
             {width:'toggle'
@@ -271,10 +285,6 @@ $('document').ready(function(){
         $('.aside').show().animate(
             {width:'23.3333%'
             },400,function(){
-                $('#menu').animate(
-                    {width:'0'
-                    },200
-                );
                 
             }
         );

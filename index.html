@@ -7,8 +7,7 @@
   <title>portfolio</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=greek-ext&v2'
-      rel='stylesheet' type='text/css'>
+    <link href='css/opensanslight.css'rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
 
   <script src="js/jquery-1.11.3.js"></script>
@@ -58,35 +57,38 @@
             <!--Menu nav-->
             <div id = "menu">
                 <div class="circle" id ="circle1"></div>
-                <div class="rectangle" id ="rectangle1">
-                    <h1 id = "text-rect-1" class="text-rect">
-                        Home
-                    </h1> 
-                </div>
+                <div class="rectangle" id ="rectangle1"></div>
+                
+
+
                 <div class="circle" id ="circle2"></div>
                 <div class="rectangle" id ="rectangle2">
                     <h1 id = "text-rect-2" class="text-rect">
                         About Me
                     </h1> 
                 </div>
+
                 <div class="circle" id ="circle3"></div>
                 <div class="rectangle" id ="rectangle3">
                     <h1 id = "text-rect-3" class="text-rect">
                         Heading 3
                     </h1> 
                 </div>
+
                 <div class="circle" id ="circle4"></div>
                 <div class="rectangle" id ="rectangle4">
                     <h1 id = "text-rect-4" class="text-rect">
                         heading 4
                     </h1> 
                 </div>
+
                 <div class="circle" id ="circle5"></div>
                 <div class="rectangle" id ="rectangle5">
                     <h1 id = "text-rect-5" class="text-rect">
                         Heading 5
                     </h1> 
                 </div>
+                
                 <div class="circle" id ="circle6"></div>
                 <div class="rectangle" id ="rectangle6">
                     <h1 id = "text-rect-6" class="text-rect">
@@ -94,7 +96,10 @@
                     </h1> 
                 </div>
                 <div class="circle" id ="circle7"></div>
+                
                 <div class="circle" id ="circle8"></div>
+
+                
                 
             </div>
             
@@ -124,11 +129,14 @@
                 
                 
                 
+                
             </div>
             
             <!--Home-->
             <div id = "home">
-                <div id = "home_l1" class = "home_pane"></div>
+                <div id = "home_l1" class = "home_pane">
+                    <button id="menu-button">Menu</button>
+                </div>
                 <div id = "home_r1" class = "home_pane"></div>
                 <div id = "home_l2" class = "home_pane"></div>
                 <div id = "home_r2" class = "home_pane"></div>
@@ -153,7 +161,42 @@
             
         </div>
     </div>
-    
+    <script>
+    var distance = 60;
+    var hoverDistance = 20;
+    var hoverTimeDuration = 1000;
+    var width = $("#circle1").width();
+    $("#circle1").css("height", width+'px');
+    var width = $("#circle2").width();
+    $("#circle2").css("height", width+'px');
+
+    $('#text-rect-2').css("left", ($('#circle2').width()/2 + distance) + 'px');
+    var width = $("#circle3").width();
+    $("#circle3").css("height", width+'px');
+    $('#text-rect-3').css("left", ($('#circle3').width()/2 + distance) + 'px');
+    var width = $("#circle4").width();
+    $("#circle4").css("height", width+'px');
+    $('#text-rect-4').css("left", ($('#circle4').width()/2 + distance) + 'px');
+    var width = $("#circle5").width();
+    $("#circle5").css("height", width+'px');
+    $('#text-rect-5').css("left", ($('#circle5').width()/2 + distance) + 'px');
+    var width = $("#circle6").width();
+    $("#circle6").css("height", width+'px');
+    $('#text-rect-6').css("left", ($('#circle6').width()/2 + distance) + 'px');
+    var width = $("#circle7").width();
+    $("#circle7").css("height", width+'px');
+    var width = $("#circle8").width();
+    $("#circle8").css("height", width+'px');
+    // for(var i= 1 ; i<= 7; i++){
+    //     $('#circle' + i).mouseenter(function() {
+    //         $(this).animate({"left": hoverDistance + "px", "bottom": "" + hoverDistance + "px"}, hoverTimeDuration);
+    //         $("#rectangle" + i).animate({transform: "rotate(3deg)"}, hoverTimeDuration);
+    //     });
+    //     $('#circle' + i).mouseout(function() {
+    //         $(this).animate({"left": "-"+0+"px", "bottom": "-" + 0+ "px"}, hoverTimeDuration);
+    //     });
+    // }
+    </script>
     <script src="js/scripts.js"></script> 
     
 </body>

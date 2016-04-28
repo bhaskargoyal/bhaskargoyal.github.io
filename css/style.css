@@ -150,10 +150,11 @@ Loader
 
 .text-rect {
     display: block; 
-    position:relative;
+    position:absolute;
     font-family: 'Open Sans Light'; 
     font-size: 40px;
-    top: 80%; 
+    bottom: 0%; 
+
     color: #FFF;
 
 }
@@ -161,10 +162,10 @@ Loader
     color: #000;
 }
 #text-rect-1 {
-    left: 10%;
+    /*left: 50px;*/
 }
 #text-rect-2 {
-    left: 15%;
+    left: 40%;
 }
 #text-rect-3 {
     left: 20%;
@@ -192,8 +193,21 @@ Loader
     animation-duration: 1s;
     animation-delay: 0s;
 }
-div[id^="circle"]:hover {
-    background: #FFF;
+
+/*.circle:hover {
+    animation-name: hoverCircle;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}*/
+@keyframes hoverCircle {
+    0% {
+        transform: translate(-50%, 50%);
+    }
+    100% {
+        transform: translate(-47%, 47%);
+    }
+
 }
 @keyframes incomingcircle {
     0% {
@@ -205,8 +219,8 @@ div[id^="circle"]:hover {
 }
 
 #circle1 {
-    width: 300px;
-    height: 300px;
+    width: 20%;
+
     border-radius: 150px;
     background: #a81a1a;
     z-index: 200;
@@ -218,15 +232,14 @@ div[id^="circle"]:hover {
 
 
 #circle2 {
-    width: 600px;
-    height: 600px;
+    width: 40%;
     border-radius: 300px;
     background: #b82525;
     z-index: 180;
     /*animation-delay: 2s;*/
 }
 #circle3 {
-    width: 900px;
+    width: 60%;
     height: 900px;
     border-radius: 450px;
     background: #c92d2d;
@@ -235,7 +248,7 @@ div[id^="circle"]:hover {
 
 }
 #circle4 {
-    width: 1200px;
+    width: 80%;
     height: 1200px;
     border-radius: 600px;
     background: #e03834;
@@ -243,7 +256,7 @@ div[id^="circle"]:hover {
     /*animation-delay: 4s;*/
 }
 #circle5 {
-    width: 1500px;
+    width: 100%;
     height: 1500px;
     border-radius: 750px;
     background: #eb524f;
@@ -251,7 +264,7 @@ div[id^="circle"]:hover {
     /*animation-delay: 5s;*/
 }
 #circle6 {
-    width: 1850px;
+    width: 120%;
     height: 1850px;
     border-radius: 925px;
     background: #dd6f6f;
@@ -259,7 +272,7 @@ div[id^="circle"]:hover {
     /*animation-delay: 6s;*/
 }
 #circle7 {
-    width: 2200px;
+    width: 140%;
     height: 2200px;
     border-radius: 1100px;
     background: #f1dee1;
@@ -267,11 +280,19 @@ div[id^="circle"]:hover {
     /*animation-delay: 6s;*/
 }
 #circle8 {
-    width: 3000px;
+    width: 300%;
     height: 3000px;
     border-radius: 1500px;
     background: #eddadd;
     z-index: 60;
+    /*animation-delay: 7s;*/
+}
+#circle9 {
+    width: 250px;
+    height: 250px;
+    border-radius: 1500px;
+    background: #eddadd;
+    z-index: 1000;
     /*animation-delay: 7s;*/
 }
 
@@ -411,7 +432,7 @@ div[id^="circle"]:hover {
 
 
 #menu{
-    width: 10%;
+    width: 30%;
     height: 100%;
     float: left;
     background-color: #1de9b6;
