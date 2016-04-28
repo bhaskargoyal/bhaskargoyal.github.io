@@ -2,23 +2,23 @@ $('document').ready(function(){
 
     
     // loader loaded
-    $.fn.animateRotate = function(angle, duration, easing, complete) {
-      return this.each(function() {
-        var $elem = $(this);
-        $({deg: 0}).animate({deg: angle}, {
-          duration: duration,
-          easing: easing,
-          step: function(now) {
-            $elem.css({
-               transform: 'translate(-50%, -50%) rotate(' + now + 'deg)'
+    // $.fn.animateRotate = function(angle, duration, easing, complete) {
+    //   return this.each(function() {
+    //     var $elem = $(this);
+    //     $({deg: 0}).animate({deg: angle}, {
+    //       duration: duration,
+    //       easing: easing,
+    //       step: function(now) {
+    //         $elem.css({
+    //            transform: 'translate(-50%, -50%) rotate(' + now + 'deg)'
     
-             });
-          },
-          complete: complete || $.noop
-        });
-      });
-    };
-    $('#sun_main').animateRotate(180*50,1800*50,"easeOutQuart");
+    //          });
+    //       },
+    //       complete: complete || $.noop
+    //     });
+    //   });
+    // };
+    // $('#sun_main').animateRotate(180*50,1800*50,"easeOutQuart");
 
 
     // All things are loaded , remove loader, call function start
