@@ -1,7 +1,7 @@
 $('document').ready(function(){
 
     
-    
+    // loader loaded
     $.fn.animateRotate = function(angle, duration, easing, complete) {
       return this.each(function() {
         var $elem = $(this);
@@ -18,9 +18,10 @@ $('document').ready(function(){
         });
       });
     };
-                
-    
-     $('#sun_main').animateRotate(180*50,1800*50,"easeOutQuart");
+    $('#sun_main').animateRotate(180*50,1800*50,"easeOutQuart");
+
+
+    // All things are loaded , remove loader, call function start
     $(window).load(function(){
         $("#sun_mainAlt,#fence_with_bird,#bird,#fence,#fence2,#cloud1,#cloud2,#cloud3,#cloud4,#cloud5").hide();
         $("#main").css({});
@@ -31,8 +32,7 @@ $('document').ready(function(){
                 $(this).hide(0, function(){
                     $('#loader-wrapper').fadeOut('slow',function() {
                         $(this).delay(500).remove();
-                        start();
-                        
+                        start();                        
                     });
                 });    
             }
@@ -46,12 +46,7 @@ $('document').ready(function(){
     ////////START.........
     //////////////////////
    
-    
-    
-
-
-    
-    
+      
     function start(){
         
         $("#main").fadeIn(1000);
@@ -81,6 +76,43 @@ $('document').ready(function(){
         $("#cloud4").delay(500).animate({marginTop : "16%"},{duration : 2000,easing: "swing"});
         $("#cloud5").delay(500).animate({marginTop : "15%"},{duration : 2000,easing: "swing"});
         
+        $(function() {
+            var str= "Bhaskar Goyal";
+            $('#name-text').css({dispaly: "block"});
+            var split = str.split("");
+            var counter = 0;
+            $("#name-text").text("");
+            setTimeout(function() {
+                var SInametext = setInterval(function() {
+                    
+                    $('#name-text').append(split[counter]);
+                    counter ++;
+                    if(counter>= str.length) {
+                        clearInterval(SInametext);
+                    }
+                },140);
+            }, 1000);
+        });
+        $(function() {
+            var str= "Work in Progress";
+            $('#status').css({dispaly: "block"});
+            var split = str.split("");
+            var counter = 0;
+            $("#status").text("");
+            setTimeout(function() {
+                var SInametext = setInterval(function() {
+                    
+                    $('#status').append(split[counter]);
+                    counter ++;
+                    if(counter>= str.length) {
+                        clearInterval(SInametext);
+                    }
+                },140);
+            }, 1000);
+        });
+        
+
+        
         $("#fence_with_bird").mouseenter(function() {
         
             $("#bird").animate({transform: "rotate(-50deg)"},100,function(){
@@ -95,13 +127,33 @@ $('document').ready(function(){
         });
        
         
-        $("#fence").hover(function() {
-            $(this).effect( "bounce", "slow" );
+        $("#fence").mouseenter(function() {
+            $(this).effect( "shake", 600 );
         });
-        // $("#fence2").hover(function() {
+        // $("#fence2").mouseenter(function() {
         //     $(this).effect( "highlight", 1000 );
         // });
-        
+
+
+        $("#fence2").on("click",function(){
+            $('#main').animate(
+                {
+                    width:'toggle'
+                },400,function(){
+                    $('#main').hide();    
+                }
+            );
+            $('#menu').show().animate(
+                {width:'10%'
+                },400,function(){    
+                }
+            );
+            $('#home').show().animate(
+                {width:'23.3333%'
+                },400,function(){  
+                }
+            );
+        });
     }
     
     
@@ -181,24 +233,7 @@ $('document').ready(function(){
    
     
     
-    $('#main').on("click",function(){
-        $(this).animate(
-            {width:'toggle'
-            },400,function(){
-                $(this).hide();    
-            }
-        );
-        $('#menu').show().animate(
-            {width:'10%'
-            },400,function(){    
-            }
-        );
-        $('#home').show().animate(
-            {width:'23.3333%'
-            },400,function(){  
-            }
-        );
-    });
+
     
     $('#home').on("click",function(){
         $(this).animate(

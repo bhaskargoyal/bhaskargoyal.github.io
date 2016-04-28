@@ -1,7 +1,12 @@
+@font-face {
+    font-family: 'Open Sans Italic';
+    src: url(../img/open-sans/OpenSans-LightItalic.ttf);
+}
 
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans Italic';
 }
 
 body,html,#container{
@@ -40,7 +45,6 @@ Loader
 
     position: absolute;
     width: 8%;
-    
     left: 50%;
     top: 50%;
     /*transform: translate(-50%, -50%);*/
@@ -165,6 +169,22 @@ Loader
 }
 
 
+#name-text {
+    position: relative;
+    top: 50%;
+    left: 2%;
+    font-size: 30px;
+
+}
+
+#status {
+    position: relative;
+    top: 52%;
+    left: 3%;
+    font-size: 20px;
+
+}
+
 
 #sun_mainAlt {
     display:block;
@@ -197,15 +217,14 @@ Loader
     width: 20%;
     height: auto;
     position: absolute;
-    transform: rotate(1deg);
+    
     
 }
 
 #fence2:hover {
    /*   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);*/
-    /*
-    transform: translatey(- 5px);
-    transition: all 250ms;*/
+    transform: translatey(-7px);
+    transition: all 250ms;
 }
 #fence_with_bird {
     display: block;
@@ -214,7 +233,7 @@ Loader
     left: 70%;
     height: auto;
     position:absolute;
-    transform: rotate(-3deg);
+
     
 }
 #fence3{
