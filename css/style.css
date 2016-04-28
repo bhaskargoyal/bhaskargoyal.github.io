@@ -17,6 +17,11 @@ div #wrap{
 }
 
 
+/************************
+Loader 
+*************************/
+
+
 /*---------------------
 ---------DOOR----------
 ---------------------*/
@@ -35,8 +40,10 @@ div #wrap{
 #door > .front{
 	
 	transform: perspective( 600px ) rotateY( 0deg );
-	background: url("../img/door.jpg"); 
+	background-color: #0d47a1;
     background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
     width: 100%;
     height: 100%;
 	backface-visibility: hidden;
@@ -44,6 +51,10 @@ div #wrap{
     overflow: hidden;
 }
 
+#door-image {
+    width: 100%;
+    height: auto;
+}
 
 #door:hover > .front{	
 	transform: perspective( 600px ) rotateY( 30deg );
@@ -152,31 +163,22 @@ div #wrap{
 	
 }
 
-#fence_with_bird {
-    display: block;
-    right: 5%;
-    bottom: 0%;
-    width: 25%;
-    height: auto;
-    position:absolute;
-    transform: rotate(-3deg);
-    
-}
+
 
 #fence {
     display: block;
-    left: 8%;
+    left: 4%;
     bottom: -50%;
-    width: 18%;
+    width: 30%;
     height: auto;
     position: absolute;
-    transform: rotate(3deg);
+    
     
 }
 #fence2 {
     display: block;
     left: 39%;
-    bottom: -50%;
+    bottom: -100%;
     width: 20%;
     height: auto;
     position: absolute;
@@ -184,6 +186,22 @@ div #wrap{
     
 }
 
+#fence2:hover {
+   /*   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);*/
+    
+    transform: translatey(-15px);
+    transition: all 250ms;
+}
+#fence_with_bird {
+    display: block;
+    bottom: -50%;
+    width: 25%;
+    left: 70%;
+    height: auto;
+    position:absolute;
+    transform: rotate(-3deg);
+    
+}
 #fence3{
     display: block;
     width: 100%;
@@ -191,29 +209,21 @@ div #wrap{
     
     position:relative;
     
-    transform: rotate(-3deg);
+    
 }
 
 #bird {
     display: block;
     width: 24.6666%;
     right: 12%;
-    top: -35%;
+    top: -40%;
     height: auto;
     position:absolute;
     transform: rotate(-3deg);
     transform-origin: 70% 100%;
     
 }
-#fence_with_bird {
-    display: block;
-    bottom: -50%;
-    width: 25%;
-    height: auto;
-    position:absolute;
-    transform: rotate(-3deg);
-    
-}
+
 /*   cloud Box */
 
 #cloud1{

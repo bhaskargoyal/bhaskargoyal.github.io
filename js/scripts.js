@@ -1,30 +1,4 @@
 $('document').ready(function(){
-    
-    
-    //////////////////////
-    ////////START.........
-    //////////////////////
-    $("body,html,#container").css({
-        overflow: "hidden"
-    });
-    
-    $("#sun_mainAlt,#fence_with_bird,#bird,#fence,#fence2,#cloud1,#cloud2,#cloud3,#cloud4,#cloud5").hide();
-    $("#main").css({
-	
-	
-    });
-    $('#menu,.aside,#door_aside_wrap,#home,#door').animate(
-            {width:'0'
-            },0,function(){
-                $(this).hide();    
-            }
-    );
-    
-    $("#sun_main").css({
-        background: "#F0F4C3"
-    });
-    $("#sun_main").fadeIn(1000);
-    
     $.fn.animateRotate = function(angle, duration, easing, complete) {
       return this.each(function() {
         var $elem = $(this);
@@ -44,19 +18,49 @@ $('document').ready(function(){
         });
       });
     };
-    $('#sun_main').animateRotate(180,1800,"easeOutQuart",start);
+    
+    $("#sun_main").fadeIn(1000);
+    $('#sun_main').animateRotate(180*5,1800*5,"easeOutQuart");
+    $(window).load(function(){
+        $('#sun_main').fadeOut('slow',function() {
+            $(this).remove();
+            start();
+        });
+    });
+
+
+
+    //////////////////////
+    ////////START.........
+    //////////////////////
+    $("body,html,#container").css({
+        overflow: "hidden"
+    });
+    
+    $("#sun_mainAlt,#fence_with_bird,#bird,#fence,#fence2,#cloud1,#cloud2,#cloud3,#cloud4,#cloud5").hide();
+    $("#main").css({
+	
+    });
+    $('#menu,.aside,#door_aside_wrap,#home,#door').animate(
+            {width:'0'
+            },0,function(){
+                $(this).hide();    
+            }
+    );
+    
+    $("#sun_main").css({
+        background: "#F0F4C3"
+    });
+
+
+    
     
     function start(){
-        $('#sun_main').fadeOut(400,function(){
-            $("#sun_main").fadeOut(1000);
-		$("#main").css({
-
-	
-   		 });
-            $("#main").fadeIn(1000);
-            mainLoaded();
+        
+        $("#main").fadeIn(1000);
+        mainLoaded();
             
-        });
+        
         
     }
     
@@ -87,7 +91,7 @@ $('document').ready(function(){
         
         $("#bird").animate({transform: "rotate(-50deg)"},100,function(){
 		$(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
-			$("#bird").delay(200).animate({transform: "rotate(-50deg)"},100,function(){
+			$(this).delay(200).animate({transform: "rotate(-50deg)"},100,function(){
 			$(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
 		
 				});
@@ -100,9 +104,9 @@ $('document').ready(function(){
     $("#fence").hover(function() {
         $(this).effect( "bounce", "slow" );
     });
-    $("#fence2").hover(function() {
-        $(this).effect( "bounce", "fast" );
-    });
+    // $("#fence2").hover(function() {
+    //     $(this).effect( "highlight", 1000 );
+    // });
     
     
     
