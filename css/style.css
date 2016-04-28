@@ -6,7 +6,7 @@
 
 body,html,#container{
     height:100%;   
-    
+    overflow: hidden;
 }
 
 
@@ -21,7 +21,31 @@ div #wrap{
 Loader 
 *************************/
 
+#loader-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00a2b1;
+    z-index: 500;
+}
 
+
+#loader-image {
+    
+    position: relative;
+    height: 100%;
+}
+
+#sun_main {
+
+    position: absolute;
+    width: 8%;
+    
+    left: 50%;
+    top: 50%;
+    /*transform: translate(-50%, -50%);*/
+
+}
 /*---------------------
 ---------DOOR----------
 ---------------------*/
@@ -141,16 +165,7 @@ Loader
 }
 
 
-#sun_main {
-    display:block;
-    width: 8%;
-    
-    height: auto;
-    margin: 0 auto;
-    position: relative;
-	top: 42%;
-	
-}
+
 #sun_mainAlt {
     display:block;
     width: 8%;
@@ -188,9 +203,9 @@ Loader
 
 #fence2:hover {
    /*   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);*/
-    
-    transform: translatey(-15px);
-    transition: all 250ms;
+    /*
+    transform: translatey(- 5px);
+    transition: all 250ms;*/
 }
 #fence_with_bird {
     display: block;

@@ -1,31 +1,43 @@
 $('document').ready(function(){
+
+    
+    
     $.fn.animateRotate = function(angle, duration, easing, complete) {
       return this.each(function() {
         var $elem = $(this);
-        
-
         $({deg: 0}).animate({deg: angle}, {
           duration: duration,
           easing: easing,
           step: function(now) {
             $elem.css({
-               transform: 'rotate(' + now + 'deg)'
-               
+               transform: 'translate(-50%, -50%) rotate(' + now + 'deg)'
+    
              });
-            $elem.css('box-shadow', '0px ' +now*(0.01)+ 'px ' +now*0.15+ 'px -1px rgba(0,0,0,0.27)');
           },
           complete: complete || $.noop
         });
       });
     };
+                
     
-    $("#sun_main").fadeIn(1000);
-    $('#sun_main').animateRotate(180*5,1800*5,"easeOutQuart");
+     $('#sun_main').animateRotate(180*50,1800*50,"easeOutQuart");
     $(window).load(function(){
-        $('#sun_main').fadeOut('slow',function() {
-            $(this).remove();
-            start();
-        });
+        $("#sun_mainAlt,#fence_with_bird,#bird,#fence,#fence2,#cloud1,#cloud2,#cloud3,#cloud4,#cloud5").hide();
+        $("#main").css({});
+        $('#menu,.aside,#door_aside_wrap,#home,#door').animate(
+            {
+                width:'0'
+            },0,function(){
+                $(this).hide(0, function(){
+                    $('#loader-wrapper').fadeOut('slow',function() {
+                        $(this).delay(500).remove();
+                        start();
+                        
+                    });
+                });    
+            }
+        );
+        
     });
 
 
@@ -33,24 +45,9 @@ $('document').ready(function(){
     //////////////////////
     ////////START.........
     //////////////////////
-    $("body,html,#container").css({
-        overflow: "hidden"
-    });
+   
     
-    $("#sun_mainAlt,#fence_with_bird,#bird,#fence,#fence2,#cloud1,#cloud2,#cloud3,#cloud4,#cloud5").hide();
-    $("#main").css({
-	
-    });
-    $('#menu,.aside,#door_aside_wrap,#home,#door').animate(
-            {width:'0'
-            },0,function(){
-                $(this).hide();    
-            }
-    );
     
-    $("#sun_main").css({
-        background: "#F0F4C3"
-    });
 
 
     
@@ -84,29 +81,29 @@ $('document').ready(function(){
         $("#cloud4").delay(500).animate({marginTop : "16%"},{duration : 2000,easing: "swing"});
         $("#cloud5").delay(500).animate({marginTop : "15%"},{duration : 2000,easing: "swing"});
         
+        $("#fence_with_bird").mouseenter(function() {
+        
+            $("#bird").animate({transform: "rotate(-50deg)"},100,function(){
+                $(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
+                    $(this).delay(200).animate({transform: "rotate(-50deg)"},100,function(){
+                        $(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
+                
+                        });
+                    });
+                });
+            });
+        });
+       
+        
+        $("#fence").hover(function() {
+            $(this).effect( "bounce", "slow" );
+        });
+        // $("#fence2").hover(function() {
+        //     $(this).effect( "highlight", 1000 );
+        // });
         
     }
     
-    $("#fence_with_bird").mouseenter(function() {
-        
-        $("#bird").animate({transform: "rotate(-50deg)"},100,function(){
-		$(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
-			$(this).delay(200).animate({transform: "rotate(-50deg)"},100,function(){
-			$(this).delay(200).animate({transform: "rotate(-3deg)"},100,function(){
-		
-				});
-			});
-		});
-	});
-    });
-   
-    
-    $("#fence").hover(function() {
-        $(this).effect( "bounce", "slow" );
-    });
-    // $("#fence2").hover(function() {
-    //     $(this).effect( "highlight", 1000 );
-    // });
     
     
     
