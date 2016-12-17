@@ -1,0 +1,89 @@
+@font-face {
+	font-family: "Roboto Thin";
+    src: url(../fonts/roboto-thin.ttf);
+}
+@font-face {
+	font-family: "Roboto Light";
+    src: url(../fonts/roboto-light.ttf);
+}
+@font-face {
+	font-family: "Quarca";
+    src: url(../fonts/quarca-norm-thin.otf);
+}
+
+body {
+	margin: 0;
+}
+#textDiv {
+	position: absolute;
+	top:4%;
+	display: block;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0%);
+	-moz-transform: translate(-50%, 0%);
+	font-size: 30px;
+	color: #ffffff;
+	font-family: "Quarca";
+	text-shadow: 0 0 0.4em #87F, 0 0 0.4em #87F, 0 0 0.4em #87F;
+	cursor: hand;
+	
+}
+#controlDiv {
+	position: absolute;
+	display: block;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0%);
+	-moz-transform: translate(-50%, 0%);
+	font-size: 30px;
+	color: #ffffff;
+	font-family: "Quarca";
+	text-shadow: 0 0 0.4em #87F, 0 0 0.4em #87F, 0 0 0.4em #87F;
+	
+}
+
+.float {
+	-webkit-animation-name: Floatingx;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: Floating;
+    -moz-animation-duration: 4s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(-50%, 0%);}
+    50% {-webkit-transform:translate(-50%, 40%);}
+    to {-webkit-transform: translate(-50%, 0%);    }    
+}
+    
+@-moz-keyframes Floating{
+    from {-moz-transform:translate(-50%, 0%);}
+    65% {-moz-transform:translate(-50%, 2%);}
+    to {-moz-transform: translate(-50%, 0%);}    
+}
+
+.scaling{
+	float: left;
+	-webkit-animation-name: scalex;
+	-webkit-animation-duration:3s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:ease-in-out;
+	-moz-animation-name: scale;
+	-moz-animation-duration:3s;
+	-moz-animation-iteration-count:infinite;
+	-moz-animation-timing-function:ease-in-out;
+}
+
+@-webkit-keyframes scalex{
+    from {-webkit-transform: scale(1.0) translate(-50%, 0%);}
+    65% {-webkit-transform: scale(1.1) translate(-50%, 0%);}
+    to {-webkit-transform: scale(1.0) translate(-50%, 0%);}    
+}
+    
+@-moz-keyframes scale{
+    from {-moz-transform: scale(1.0) translate(-50%, 0%);}
+    65% {-moz-transform: scale(1.1) translate(-50%, 0%);}
+    to {-moz-transform: scale(1.0) translate(-50%, 0%);}    
+}
+
